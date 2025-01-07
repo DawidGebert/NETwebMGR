@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyWebRazor", "FunnyWebRazor.csproj", "{C745BEA9-8D14-4066-84DA-674744ED857D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C745BEA9-8D14-4066-84DA-674744ED857D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C745BEA9-8D14-4066-84DA-674744ED857D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C745BEA9-8D14-4066-84DA-674744ED857D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C745BEA9-8D14-4066-84DA-674744ED857D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {410E7AC0-CF93-415F-B87F-3952B21ED71E}
+	EndGlobalSection
+EndGlobal
