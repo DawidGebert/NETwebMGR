@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background-color: #caf0f8
 }
 
 @media (min-width: 768px) {
@@ -18,13 +19,26 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #caf0f8
 }
 
 .checked {
-    color: orange;
+    color: yellow;
 }
 
 .rating {
     width: 26.6vh
+}
+
+.navbar {
+    background-color: #ade8f4
+}
+
+.container {
+    background-color: #ade8f4
+}
+
+footer {
+    background-color: #ade8f4
 }
