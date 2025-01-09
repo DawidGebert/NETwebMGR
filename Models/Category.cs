@@ -10,11 +10,15 @@ namespace FunnyWebRazor.Models
 
         [Required]
         [MaxLength(30)]
-        [DisplayName("Nazwa kategorii")]
+        [DisplayName("Title")]
         public string Name { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Kolejność wyświetlania powinna być w granicach 1-100")]
-        [DisplayName("Kolejność wyświetlania")]
-        public int DisplayOrder { get; set; }
+        [Range(1, 10, ErrorMessage = "  Rating should be 1-10")]
+        [DisplayName("Rating")]
+        public int Rating { get; set; }
+
+        [MaxLength(500)]
+        [DisplayName("Review")]
+        public string Review { get; set; }
     }
 }
