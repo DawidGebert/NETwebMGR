@@ -1,5 +1,5 @@
 ﻿@page
-@model FunnyWebRazor.Pages.Categories.IndexModel
+@model FunnyWebRazor.Pages.Categories.IndexRatingSortedModel
 @{
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,7 +36,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var obj in Model.CategoryList.OrderBy(x => x.Name))
+    @foreach (var obj in Model.CategoryList.OrderBy(x => -x.Rating))
     {
         <tr>
             <td>@obj.Name</td>

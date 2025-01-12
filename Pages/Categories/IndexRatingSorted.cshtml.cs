@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FunnyWebRazor.Pages.Categories
 {
-    public class IndexModel : PageModel
+    public class IndexRatingSortedModel : PageModel
     {
         private readonly ApplicationDbContext _db;
         public List<Category> CategoryList { get; set; }
 
-        public IndexModel(ApplicationDbContext db)
+        public IndexRatingSortedModel(ApplicationDbContext db)
         {
             _db = db;
         }
