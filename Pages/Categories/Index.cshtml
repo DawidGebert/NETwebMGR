@@ -25,20 +25,20 @@
             <th>
                 Name
                 <a asp-page="/categories/index" asp-route-sort="nameasc">
-                    asc
+                    a-z
                 </a>
                 <a asp-page="/categories/index" asp-route-sort="namedesc">
-                    desc
+                    z-a
                 </a>
             </th>
             <th>Review</th>
             <th>
                 Rating
                 <a asp-page="/categories/index" asp-route-sort="ratingasc">
-                    asc
+                    best
                 </a>
                 <a asp-page="/categories/index" asp-route-sort="ratingdesc">
-                    desc
+                    worst
                 </a>
             </th>
         <th></th>
@@ -50,13 +50,13 @@
         {
             sortedList = Model.CategoryList.OrderBy(x => x.Name);
         }
-        @if (@Model.SortType == "ratingasc") {
+        @if (@Model.SortType == "ratingdesc") {
             sortedList = Model.CategoryList.OrderBy(x => x.Rating);
         }
         @if (@Model.SortType == "namedesc") {
             sortedList = Model.CategoryList.OrderByDescending(x => x.Name);
         }
-        @if (@Model.SortType == "ratingdesc") {
+        @if (@Model.SortType == "ratingasc") {
             sortedList = Model.CategoryList.OrderByDescending(x => x.Rating);
         }
         @foreach (var obj in @sortedList)
