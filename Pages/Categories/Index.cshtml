@@ -45,8 +45,21 @@
     </tr>
     </thead>
     <tbody>
-        @if(@Model.SortType == "nameasc"){
-        @foreach (var obj in Model.CategoryList.OrderBy(x => x.Name))
+        @{IOrderedEnumerable<Models.Category> sortedList = Model.CategoryList.OrderBy(x => x.Name);}
+        @if (@Model.SortType == "nameasc")
+        {
+            sortedList = Model.CategoryList.OrderBy(x => x.Name);
+        }
+        @if (@Model.SortType == "ratingasc") {
+            sortedList = Model.CategoryList.OrderBy(x => x.Rating);
+        }
+        @if (@Model.SortType == "namedesc") {
+            sortedList = Model.CategoryList.OrderByDescending(x => x.Name);
+        }
+        @if (@Model.SortType == "ratingdesc") {
+            sortedList = Model.CategoryList.OrderByDescending(x => x.Rating);
+        }
+        @foreach (var obj in @sortedList)
         {
         <tr>
             <td>@obj.Name</td>
@@ -72,87 +85,6 @@
             </td>
         </tr>
         }
-        }
-        @if (@Model.SortType == "namedesc") {
-            @foreach (var obj in Model.CategoryList.OrderByDescending(x => x.Name)) {
-                <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.Review</td>
-                    <td class="rating">
-                        @for (var i = 0; i < @obj.Rating; i++) {
-                            <span class="fa fa-star checked"></span>
-                        }
-                        @for (var i = 0; i < 10 - @obj.Rating; i++) {
-                            <span class="fa fa-star"></span>
-                        }
-
-                    </td>
-                    <td>
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-page="/categories/edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
-                                <i class="bi bi-pencil-square"></i> Edit
-                            </a>
-                            <a asp-page="/categories/delete" asp-route-id="@obj.Id" class="btn btn-secondary mx-2">
-                                <i class="bi bi-trash-fill"></i> Delete
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        }
-        @if (@Model.SortType == "ratingasc") {
-            @foreach (var obj in Model.CategoryList.OrderBy(x => x.Rating)) {
-                <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.Review</td>
-                    <td class="rating">
-                        @for (var i = 0; i < @obj.Rating; i++) {
-                            <span class="fa fa-star checked"></span>
-                        }
-                        @for (var i = 0; i < 10 - @obj.Rating; i++) {
-                            <span class="fa fa-star"></span>
-                        }
-
-                    </td>
-                    <td>
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-page="/categories/edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
-                                <i class="bi bi-pencil-square"></i> Edit
-                            </a>
-                            <a asp-page="/categories/delete" asp-route-id="@obj.Id" class="btn btn-secondary mx-2">
-                                <i class="bi bi-trash-fill"></i> Delete
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        }
-        @if (@Model.SortType == "ratingdesc") {
-            @foreach (var obj in Model.CategoryList.OrderBy(x => -x.Rating)) {
-                <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.Review</td>
-                    <td class="rating">
-                        @for (var i = 0; i < @obj.Rating; i++) {
-                            <span class="fa fa-star checked"></span>
-                        }
-                        @for (var i = 0; i < 10 - @obj.Rating; i++) {
-                            <span class="fa fa-star"></span>
-                        }
-
-                    </td>
-                    <td>
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-page="/categories/edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
-                                <i class="bi bi-pencil-square"></i> Edit
-                            </a>
-                            <a asp-page="/categories/delete" asp-route-id="@obj.Id" class="btn btn-secondary mx-2">
-                                <i class="bi bi-trash-fill"></i> Delete
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
         }
     </tbody>
     
